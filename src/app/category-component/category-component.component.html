@@ -1,0 +1,13 @@
+<table class="tableCss">
+  <thead>
+    <th>{{id}}</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of products">
+      <td>{{i.idDrink}}</td>
+      <td><img src="{{i.strDrinkThumb}}" height=100 width=300></td>
+      <td>{{i.strDrink}}</td>
+    </tr>
+    
+  </tbody>
+</table>

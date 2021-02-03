@@ -1,0 +1,21 @@
+<div class="container">
+<div class = "innerClass" >List by Category<button value="c" class="button" (click)="viewList($event)">Category</button></div>
+<div class="innerClass">List by Glass<button value="g" class="button" (click)="viewList($event)">Glass</button></div>
+<div class="innerClass"> List by Ingredient<button value="i"class="button" (click)="viewList($event)">Ingredient</button></div>
+
+</div>
+<table class="tableCss" *ngIf="tableHeader!=''">
+  <thead>
+    <th>{{tableHeader}}</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of products">
+      <td *ngIf="showCategory"><a [routerLink]="['/category',i.strCategory]">{{i.strCategory}}</a></td>
+      <td *ngIf="showGlass"><a [routerLink]="['/glass',i.strGlass]">{{i.strGlass}}</a></td>
+      <td *ngIf="showIngredient"><a [routerLink]="['/ingredient',i.strIngredient1]">{{i.strIngredient1}}</a></td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<router-outlet></router-outlet>
